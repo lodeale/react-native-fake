@@ -9,8 +9,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Header from './modules/Components/Header/Header';
-import HomeScreen from './modules/Team1/src/HomeScreen';
-import SaleScreen from './modules/Team2/src/SaleScreen';
+import Team1 from './modules/react-native-fake-child/Team1/src/Main.js';
 
 class RootScreen extends React.Component {
   render() {
@@ -18,12 +17,8 @@ class RootScreen extends React.Component {
       <View>
         <Text>Root Screen</Text>
         <Button 
-          title="Go Home"
+          title="Go Team1"
           onPress={() => this.props.navigation.navigate('Home')}
-        />
-        <Button 
-          title="Go Sale"
-          onPress={() => this.props.navigation.navigate('Sale')}
         />
       </View>
     );
@@ -31,12 +26,11 @@ class RootScreen extends React.Component {
 }
 
 const AppNavigator = createStackNavigator({
+    ...Team1,
     Root: { screen: RootScreen },
-    Home: {screen: HomeScreen},
-    Sale: {screen: SaleScreen},
   },
   {
-    initialRouteName: 'Sale',
+    initialRouteName: 'Home',
   });
 
 export default createAppContainer(AppNavigator);
