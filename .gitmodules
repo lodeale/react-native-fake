@@ -1,0 +1,3 @@
+[submodule "react-native-fake-child"]
+	path = modules/react-native-fake-child
+	url = https://github.com/lodeale/react-native-fake-child/
